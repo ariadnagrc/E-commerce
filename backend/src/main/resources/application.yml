@@ -1,0 +1,23 @@
+server:
+    port: 8080
+
+application:
+    security:
+        jwt:
+            secret-key: MzJieXRlc2xvbmdzZWNyZXRrZXlmb3JodG1hY3NoYTI1Ng==
+            expiration: 86400000 # Un d�a
+            refresh-token:
+                expiration: 604800000 # 7 d�as
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/ecommerce
+        username: postgres
+        password: postgres
+        driver-class-name: org.postgresql.Driver
+    jpa:
+        hibernate:
+           ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        show-sql: false
