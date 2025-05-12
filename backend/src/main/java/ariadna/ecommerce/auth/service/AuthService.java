@@ -30,7 +30,7 @@ public class AuthService {
                 .name(request.name())
                 .email(request.email())
                 .password(passwordEncoder.encode(request.password()))
-                .role(request.role())
+                .role(User.Role.USER) // Por defecto será USER
                 .build();
 
         final User savedUser = repository.save(user);
